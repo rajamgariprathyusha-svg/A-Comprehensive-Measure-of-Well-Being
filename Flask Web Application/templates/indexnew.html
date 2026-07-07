@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HDI Prediction</title>
+</head>
+<body>
+
+    <h1>HDI Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <label for="life_expectancy">Life Expectancy</label><br>
+        <input
+            type="number"
+            step="any"
+            id="life_expectancy"
+            name="life_expectancy"
+            required>
+        <br><br>
+
+        <label for="schooling">Schooling (Years)</label><br>
+        <input
+            type="number"
+            step="any"
+            id="schooling"
+            name="schooling"
+            required>
+        <br><br>
+
+        <label for="gni">GNI per Capita</label><br>
+        <input
+            type="number"
+            step="any"
+            id="gni"
+            name="gni"
+            required>
+        <br><br>
+
+        <label for="internet_users">Internet Users (%)</label><br>
+        <input
+            type="number"
+            step="any"
+            id="internet_users"
+            name="internet_users"
+            required>
+        <br><br>
+
+        <input type="submit" value="Predict">
+
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+
+</body>
+</html>
